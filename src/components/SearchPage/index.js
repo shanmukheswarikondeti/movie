@@ -93,13 +93,35 @@ class SearchPage extends Component {
 
   renderFailureView = () => <FailurePage tryAgain={this.tryAgainSearchData} />
 
+  renderCheckView = () => {
+    const {searchValue} = this.state
+    const emptySearch = searchValue === ''
+    let classEmpty = ''
+    if (emptySearch) {
+      classEmpty = 'empty'
+    }
+    return (
+      <div className={classEmpty}>
+        {emptySearch ? (
+          <div className="list-container">
+            <p className="empty-text">
+              Search the movie,by clicking on the search Icon
+            </p>
+          </div>
+        ) : (
+          this.renderSuccessView()
+        )}
+      </div>
+    )
+  }
+
   renderSwitchView = () => {
     const {renderStatus} = this.state
     switch (renderStatus) {
       case renderConstraints.loading:
         return this.renderLoaderView()
       case renderConstraints.success:
-        return this.renderSuccessView()
+        return this.renderCheckView()
       case renderConstraints.fail:
         return this.renderFailureView()
       default:
