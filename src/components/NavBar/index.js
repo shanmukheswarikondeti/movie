@@ -89,7 +89,7 @@ class NavBar extends Component {
               <img
                 className="avatar show1"
                 alt="profile"
-                src="https://res.cloudinary.com/dkbxi5qts/image/upload/v1660573232/Avatar_giy0y5.png"
+                src="https://res.cloudinary.com/dymra27rx/image/upload/v1678261485/Avatar_w7xpex.png"
               />
             </Link>
             <button
